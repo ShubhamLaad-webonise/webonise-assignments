@@ -1,0 +1,23 @@
+use mydb;
+db.posts.drop();
+db.posts.insert({ 
+	_id:ObjectId("56d90f9e39fde2a612941e82"),
+	user_id:ObjectId("56d90ef939fde2a612941e7e"), 
+	heading:'monday',
+	description:'what a day!' ,
+	image:['path1'],
+	likes:20,
+	timestamp:new Date(),
+	comments:[{_id:1,owner:'shubham.laad',title:'hi',likes:20,timestamp:new Date()},
+		{_id:2,owner:'ujjval.laad',title:'hellow',timestamp:new Date()}] })
+
+db.posts.insert({
+	_id:ObjectId("56d90f9c39fde2a612941e81"), 
+	user_id:ObjectId("56d90efa39fde2a612941e7f"), 
+	heading:'monday',
+	 description:'what a day!' ,
+	image:['path1'],
+	likes:20,
+	timestamp:new Date(),
+	comments:[{_id:1,owner:'shubham.laad',title:'hi',likes:20},
+	{_id:2,owner:'ujjval.laad',title:'hellow'}] })

@@ -1,0 +1,119 @@
+use cms;
+db.pages.drop();
+db.pages.insert({ 
+_id:'1',
+user_id:'1',
+title:'hi',
+url:'url1',
+description:'page1',
+posts:[
+{
+_id:'1',
+	user_id:'1', 
+	heading:'monday',
+	description:'what a day!' ,
+	images:['path1'],
+
+comments:[
+ {
+_id:'1',
+user_id:'2',
+title:'or bhai',
+last_change_time:new Date()
+ },
+ {
+_id:'2',
+user_id:'2',
+title:'or bhai kya hal',
+last_change_time:new Date()
+ }
+ ]
+},
+{
+_id:'2',
+	user_id:'2', 
+	heading:'monday',
+	description:'what a day!' ,
+	images:['path1'],
+
+comments:[
+ {
+_id:'1',
+user_id:'3',
+title:'or bhai fggf',
+last_change_time:new Date()
+ },
+ {
+_id:'2',
+user_id:'1',
+title:'or bhai kya hal h',
+last_change_time:new Date()
+ }
+ ]
+}
+     ]
+
+}) 
+
+
+db.pages.insert({ 
+_id:'2',
+user_id:'2',
+title:'hi',
+url:'url1',
+description:'page1',
+posts:[
+{
+_id:'1',
+	user_id:'1', 
+	heading:'monday',
+	description:'what a day!' ,
+	images:['path1'],
+
+comments:[
+ {
+_id:'1',
+user_id:'2',
+title:'or bhai',
+last_change_time:new Date()
+ },
+ {
+_id:'2',
+user_id:'2',
+title:'or bhai kya hal',
+last_change_time:new Date()
+ }
+ ]
+},
+{
+_id:'2',
+	user_id:'2', 
+	heading:'monday',
+	description:'what a day!' ,
+	images:['path1'],
+
+comments:[
+ {
+_id:'1',
+user_id:'3',
+title:'or bhai fggf',
+last_change_time:new Date()
+ },
+ {
+_id:'2',
+user_id:'1',
+title:'or bhai kya hal h',
+last_change_time:new Date()
+ }
+ ]
+}
+     ]
+
+}) 
+
+
+
+
+
+
+

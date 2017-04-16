@@ -1,0 +1,29 @@
+use mydb;
+db.users.drop();
+db.users.insert({ 
+	_id:ObjectId("56d90ef939fde2a612941e7e"),
+	first_name: 'shubham', 
+   	last_name:'laad',  
+  	addresses:[{city:'khandwa',state:'MP'}],
+  	phone_numbers:[8989920578,9827336600],
+	email:'s@gmail.com',
+	login_info:{login_name: 'shubham.laad' ,   password: 'shubham'  ,   time_stamp:new Date() },  
+ 	role:'editor'})
+
+db.users.insert({
+	_id:ObjectId("56d90efa39fde2a612941e7f"),
+	first_name: 'ujjval', 
+  	last_name:'laad',   
+	addresses:[{city:'bpl',state:'MP'}],
+	phone_numbers:[9876543210],
+	email:'u@gmail.com',
+	login_info:{login_name: 'ujjval.laad' ,   password: 'ujjval'  ,   time_stamp:new Date() },  
+	role:'admin'})
+
+db.users.insert({
+	 _id:ObjectId("56d90efb39fde2a612941e80"),
+	 first_name: 'avneesh',    last_name:'',
+	 addresses:[{city:'lkn',state:'UP'}],
+	phone_numbers:[9876543222],email:'a@gmail.com',
+	login_info:{login_name: 'avneesh' ,   password: 'll'  ,   time_stamp:new Date() },   
+	role:'editor'})

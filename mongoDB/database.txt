@@ -1,0 +1,20 @@
+use mydb;
+db.users.insert({ _id:ObjectId("56d90ef939fde2a612941e7e"),first_name: 'shubham',    last_name:'laad',    addresses:[{city:'khandwa',state:'MP'}],phone_numbers:[8989920578,9827336600],email:'s@gmail.com',login_info:{login_name: 'shubham.laad' ,   password: 'shubham'  ,   time_stamp:'20/05/2015'  },   role:'editor'})
+
+db.users.insert({_id:ObjectId("56d90efa39fde2a612941e7f"),first_name: 'ujjval',    last_name:'laad',    addresses:[{city:'bpl',state:'MP'}],phone_numbers:[9876543210],email:'u@gmail.com',login_info:{login_name: 'ujjval.laad' ,   password: 'ujjval'  ,   time_stamp:'20/05/2015'  },   role:'admin'})
+
+db.users.insert({ _id:ObjectId("56d90efb39fde2a612941e80"),first_name: 'avneesh',    last_name:'',    addresses:[{city:'lkn',state:'UP'}],phone_numbers:[9876543222],email:'a@gmail.com',login_info:{login_name: 'avneesh' ,   password: 'll'  ,   time_stamp:'20/06/2015'  },   role:'editor'})
+
+
+db.posts.insert({ _id:ObjectId("56d90f9e39fde2a612941e82"),user_id:ObjectId("56d90ef939fde2a612941e7e"), heading:'monday', description:'what a day!' ,image:['path1'],likes:20,comments:[{_id:1,owner:'shubham.laad',title:'hi',likes:20},{_id:2,owner:'ujjval.laad',title:'hellow'}] })
+
+db.posts.insert({_id:ObjectId("56d90f9c39fde2a612941e81"), user_id:ObjectId("56d90efa39fde2a612941e7f"), heading:'monday', description:'what a day!' ,image:['path1'],likes:20,comments:[{_id:1,owner:'shubham.laad',title:'hi',likes:20},{_id:2,owner:'ujjval.laad',title:'hellow'}] })
+
+
+db.pages.insert({ title:'hi', user_id:ObjectId("56d90ef939fde2a612941e7e"),slug:'url1',descriptions:['page1'], contents:[ObjectId("56d90f9e39fde2a612941e82"),ObjectId("56d90f9c39fde2a612941e81")]})
+
+
+
+db.pages.insert({ title:'hi', user_id:ObjectId("56d90efb39fde2a612941e80"),slug:'url1',descriptions:['page2'], contents:[ObjectId("56d90f9c39fde2a612941e81")]})
+
+db.pages.insert({ title:'hi', user_id:ObjectId("56d90efa39fde2a612941e7f"),slug:'url1',descriptions:['page2'], contents:[]})

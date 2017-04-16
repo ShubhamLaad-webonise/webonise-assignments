@@ -1,0 +1,111 @@
+#change in name field of sub document login_info 
+
+
+db.users.update({"_id":"3"},{$set:{'login_info.name':"sohail.patel"}})
+db.users.find({"_id":"3"}).pretty()
+
+
+
+
+#no of posts of all pages
+
+db.pages.aggregate(
+   [
+      {
+         $project: {
+            title:1 ,
+            numberOfPosts: { $size: "$posts" }
+         }
+      }
+   ]
+)
+
+#no of posts per page
+
+db.pages.aggregate(
+   {$match:{"_id":"1"}},
+      {
+         $project: {
+            numberOfPosts: { $size: "$posts" }
+         }
+      }
+   
+)
+
+
+#change address of user
+
+
+db.users.update(
+ {
+ "_id":"3",
+ "addresses.type":"current"
+ },
+ {
+ $set:{"addresses.$.city":"khandwa"}
+ }
+)
+
+
+
+#count comments of perticular post(not working)
+
+db.pages.aggregate({$match:
+{$and:
+[{_id:"1"},{"posts._id":"1"}]}},
+{$unwind:"$posts"},
+{$unwind:"$posts.comments"},
+{$group:{_id:"null",total:{$sum:1}}})
+
+
+#change title of perticular comment
+
+db.pages.update({_id:"1","posts._id":"1","posts.comments._id":"1"},{$set:{"posts.0.comments.0.title":"My change","posts.0.comments.0.last_change_time":new Date()}});
+
+db.pages.update({_id:"1","posts._id":"1","posts.comments._id":"1"},{$set:{"posts.0.comments.0.title":"My change"}});
+
+
+
+#find posts of perticular page id
+
+db.pages.find({_id:"2"},{posts:{$elemMatch:{"comments._id":"2"}}}).pretty()
+
+
+
+#no of comments per post   (not working)
+
+db.pages.aggregate(
+   {$match:{$and:[{"_id":"1"},{"posts._id":"1"}]}},
+      {
+         $project: {
+            numberOfComments: { $size: "$posts.comments" }
+         }
+      }
+   )
+
+
+
+#push comment at post id 1
+
+ db.pages.update({"posts._id":"1"} ,{$push:{"posts.$.comments":{"_id":"3","user_id":"2","title":"abc"}}} )
+
+
+#no of comments on perticular page
+
+db.pages.aggregate({$match: {_id:"1"}}, {$unwind:"$posts"}, {$unwind:"$posts.comments"}, {$group:{_id:"null",total:{$sum:1}}})
+
+
+
+#no of posts on perticular page
+
+db.pages.aggregate({$match: {_id:"1"}}, {$unwind:"$posts"}, {$group:{_id:"null",total:{$sum:1}}})
+
+
+
+
+
+
+
+
+
+

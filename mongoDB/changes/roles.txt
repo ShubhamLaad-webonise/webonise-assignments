@@ -1,0 +1,24 @@
+use cms;
+db.roles.drop();
+db.roles.insert({
+user_id:"1",
+permissions:
+[{type:'read',collection:'users'},
+{type:'read',collection:'pages'},
+{type:'write',collection:'users'},
+{type:'write',collection:'pages'}] 
+ 	}
+)
+db.roles.insert({
+user_id:"2",
+permissions:
+[{type:'read',collection:'users'},
+{type:'read',collection:'pages'},
+{type:'write',collection:'users'},
+{type:'write',collection:'pages'},
+{type:'read',collection:'roles'},
+{type:'write',collection:'roles'}
+] 
+}
+)
+

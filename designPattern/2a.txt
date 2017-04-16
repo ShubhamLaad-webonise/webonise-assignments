@@ -1,0 +1,3 @@
+Design Pattern - Abstract Factory Pattern
+
+Because super-factory "FactoryProducer" creates other factories "ChassisFactory" and "CabinateFactory". 

@@ -1,0 +1,3 @@
+Strategy Design Pattern 
+
+Because I created objects which represent various sorting strategies and a context object whose behavior varies as per its Sort object. The Sort object changes the executing algorithm of the context object.

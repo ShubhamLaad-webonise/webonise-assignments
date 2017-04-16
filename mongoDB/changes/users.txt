@@ -1,0 +1,41 @@
+use cms;
+db.users.drop();
+db.users.insert({ 
+	_id:'1',
+	first_name: 'shubham', 
+   	last_name:'laad',  
+  	addresses:[{type:'current',city:'pune',state:'maharastra'},
+	{type:'permanent',city:'khandwa',state:'MP'}],
+  	phone_numbers:[8989920578,9827336600],
+	email:'s@gmail.com',
+	login_info:{name: 'shubham.laad' ,   password: 'shubham',last_time:new Date()  }
+} 
+)
+
+db.users.insert({ 
+	_id:'2',
+	first_name: 'ujjval', 
+   	last_name:'laad',  
+  	addresses:[{type:'current',city:'bhopal',state:'MP'},
+	{type:'permanent',city:'khandwa',state:'MP'}],
+  	phone_numbers:[8989920578,9898526654],
+	email:'u@gmail.com',
+	login_info:{name: 'ujjval.laad' ,   password: 'shubham',last_time:new Date()   }
+}
+)
+
+db.users.insert({ 
+	_id:'3',
+	first_name: 'sohail', 
+   	last_name:'p',  
+  	addresses:[{type:'current',city:'lucknow',state:'UP'},
+	{type:'permanent',city:'indore',state:'MP'}],
+  	phone_numbers:[8989856300,98985266545],
+	email:'sp@gmail.com',
+	login_info:{name: 'sohail.p' ,   password: 'shubham',last_time:new Date()   }
+ 	})
+
+
+
+
+

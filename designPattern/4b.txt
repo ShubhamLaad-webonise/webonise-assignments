@@ -1,0 +1,9 @@
+1>Given that List of PC List<PC> which have price List and performance List
+2>In main() create Context object which accept perticular algorithum object as an argument
+3>using Context() constructor sortAlgo data member of Context set with perticuler Sort object
+4>Now Context object call executeAlgo() takes parameters basis=("price" or "performance") and List of type List<PC>
+5>In executeAlgo(), sort() call using Context object's data member "sortAlgo" with same parameters
+6>In sort() sorting algorithum is written which sort the PCs on basis of basis argument
+7>sort() sort the given List and return sorted List of type <PC> to executeAlgo()
+8>executeAlgo() return that List to main()
+9>exit

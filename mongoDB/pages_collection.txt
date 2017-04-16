@@ -1,0 +1,22 @@
+use mydb;
+db.pages.drop();
+db.pages.insert({ 
+	title:'hi', 
+	user_id:ObjectId("56d90ef939fde2a612941e7e"),
+	slug:'url1',descriptions:['page1'], 
+	contents:[ObjectId("56d90f9e39fde2a612941e82"),ObjectId("56d90f9c39fde2a612941e81")]})
+
+
+
+db.pages.insert({ 
+	title:'hi', 
+	user_id:ObjectId("56d90efb39fde2a612941e80"),
+	slug:'url1',descriptions:['page2'], 
+	contents:[ObjectId("56d90f9c39fde2a612941e81")]})
+
+db.pages.insert({ 
+	title:'hi', 
+	user_id:ObjectId("56d90efa39fde2a612941e7f"),
+	slug:'url1',
+	descriptions:['page2'],
+	contents:[]})
